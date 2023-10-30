@@ -74,6 +74,8 @@ public class fixation {
          	HashMap<String, Double> aoiProbability = new HashMap<String, Double>();
          	HashMap<String, HashMap<String, Double>> transitionProbability = new HashMap<String, HashMap<String, Double>>();
          	String lastAoi = "";
+
+			ArrayList<Double> fixationPositions = new ArrayList<Double>();
          	
             while((nextLine = csvReader.readNext()) != null) {
                 //get each fixation's duration
@@ -106,6 +108,8 @@ public class fixation {
                 allCoordinates.add(eachCoordinate);
                 allPoints.add(eachPoint);
                 saccadeDetails.add(eachSaccadeDetail);
+				fixationPositions.add(x / SCREEN_WIDTH); // For Fixation Dispersion
+				fixationPositions.add(y / SCREEN_HEIGHT); // For Fixation Dispersion
                 
                 String aoi = nextLine[aoiIndex];
             	if (aoi.equals(""))
@@ -300,6 +304,9 @@ public class fixation {
             headers.add("transition entropy");
             data.add(String.valueOf(getTransitionEntropy(aoiProbability,transitionProbability)));
 
+			headers.add("fixation dispersion");
+			data.add(String.valueOf(getFixationDispersion(fixationPositions)));
+
             outputCSVWriter.writeNext(headers.toArray(new String[headers.size()]));
             outputCSVWriter.writeNext(data.toArray(new String[data.size()]));
             outputCSVWriter.close();
@@ -449,5 +456,28 @@ public class fixation {
     	}
 		
 		return transitionEntropy;
+	}
+
+	public static double getFixationDispersion(ArrayList<Double> fixationPositions) {
+		double averageX = 0;
+		double averageY = 0;
+		double count = (double)fixationPositions.size()/2;
+		double distanceSum = 0;
+
+
+		for (int i = 0; i < fixationPositions.size(); i+= 2) {
+			averageX += fixationPositions.get(i) / count; //Calculate Average X incrementally
+			averageY += fixationPositions.get(i+1) / count; //Calculate Average Y incrementally
+		}
+
+		for (int i = 0; i < fixationPositions.size(); i+= 2) { 
+			double x = fixationPositions.get(i);
+			double y = fixationPositions.get(i+1);
+
+			distanceSum += Math.pow(x-averageX,2) + Math.pow(y-averageY,2); //Calculate distance from current position to average fixation position (sqrt not needed since it would be squared in next equation)
+		}
+
+		distanceSum = Math.sqrt(distanceSum/count); //Root mean square of distances to the average fixation position
+		return distanceSum;
 	}
 }
