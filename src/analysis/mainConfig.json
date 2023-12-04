@@ -1,4 +1,8 @@
 {
-        "location" : "directory/somefolder",
-        "name" : "Participant1"
+        "gaze-filepath" : "data/Esther Jung_all_gaze.csv",
+        "fixation-filepath" : "data/Esther Jung_fixations.csv",
+        "output-directory" : "data/output_folders",
+        "participant-name" : "TestFile_Esther",
+
+        "overwrite-mode" : "overwrite"
 }
