@@ -1,6 +1,4 @@
 {
-    "ouput" : {
         "location" : "directory/somefolder",
         "name" : "Participant1"
-    }
 }
