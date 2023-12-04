@@ -11,14 +11,21 @@ import org.json.simple.parser.*;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONArray;
 
+/* Some notes for this file
+ * Currently it will not overwrite existing directories. Make sure the participant-name in the config file does not already exist in the directory
+ * Key parameters can be set in the mainConfig.json file.
+ * JSON config format is subject to change depending on required starting parameters. This is an early iteration.
+ * 
+ */
+
 public class main_quickstart {
     public static void main(String args[]) throws Exception {
-        System.out.println("Initializing Analysis from Config")
+        System.out.println("");
+        System.out.println("---------------------------------");
+        System.out.println("INITIALIZING ANALYSIS FROM CONFIG");
 
         JSONParser parse = new JSONParser();
-        JSONObject config = (JSONObject)parse.parse(new FileReader("src\\analysis\\mainConfig.json"));
-
-        //JSONObject output = (JSONObject)config.get("output");
+        JSONObject config = (JSONObject)parse.parse(new FileReader("src\\analysis\\mainConfig.json")); //Acquire mainConfig.json file
 
         String gazepointGZDPath = (String)config.get("gaze-filepath");
         String gazepointFXDPath = (String)config.get("fixation-filepath");
@@ -48,16 +55,7 @@ public class main_quickstart {
             else
             {
                 SingleAnalytics.analyzeData(gazepointGZDPath, gazepointFXDPath, outputFolderPath);
-                try
-                {	
-                    SingleAnalytics.gazeAnalyticsOptions();
-                } 
-                catch (IOException e1) 
-                {
-                    systemLogger.writeToSystemLog(Level.WARNING, SingleAnalytics.class.getName(), "Error in Windowing Operation \n" + e1);
-                }
             }
-
         }
     }
-} 
+}

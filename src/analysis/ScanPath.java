@@ -81,7 +81,7 @@ public class ScanPath {
 			{
 				String value = nextLine[aoiColumnIndex];
 				double key = Double.valueOf(nextLine[timeIndex]);
-				if(!value.isBlank() && !value.equals("Outside"))
+				if(!value.isEmpty() && !value.equals("Outside"))
 				{
 					aoi.put(key, value);
 				}

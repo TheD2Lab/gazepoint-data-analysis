@@ -250,8 +250,9 @@ public class modifier {
 		try {
 			
 			HashMap<String, String> peakVelocities =  new HashMap<String, String>();
-			
+			System.out.println("Modifier Inputfiles: "+inputFiles.length);
 			for (int i = 0; i < inputFiles.length; i++) {
+				System.out.println("Input i: "+Integer.toString(i)+" / v: "+inputFiles[i]);
 				CSVReader reader = new CSVReader(new FileReader(new File(inputFiles[i])));
 				CSVWriter writer = new CSVWriter(new FileWriter(new File(outputFiles[i])));
 				Iterator<String[]> iter = reader.iterator();
