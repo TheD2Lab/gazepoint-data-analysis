@@ -1,0 +1,44 @@
+@relation _graphFXDResults
+
+@attribute 'total number of fixations' numeric
+@attribute 'sum of all fixation duration' numeric
+@attribute 'mean fixation duration (ms)' numeric
+@attribute 'median fixation duration (ms)' numeric
+@attribute ' StDev of fixation durations (ms)' numeric
+@attribute 'Min. fixation duration (ms)' numeric
+@attribute 'Max. fixation duration (ms)' numeric
+@attribute 'total number of saccades' numeric
+@attribute 'sum of all saccade length' numeric
+@attribute 'mean saccade length' numeric
+@attribute 'median saccade length' numeric
+@attribute 'StDev of saccade lengths' numeric
+@attribute 'min saccade length' numeric
+@attribute 'max saccade length' numeric
+@attribute 'sum of all saccade durations' numeric
+@attribute 'mean saccade duration' numeric
+@attribute 'median saccade duration' numeric
+@attribute 'StDev of saccade durations' numeric
+@attribute 'Min. saccade duration' numeric
+@attribute 'Max. saccade duration' numeric
+@attribute 'scanpath duration' numeric
+@attribute 'fixation to saccade ratio' numeric
+@attribute 'sum of all absolute degrees' numeric
+@attribute 'mean absolute degree' numeric
+@attribute 'median absolute degree' numeric
+@attribute 'StDev of absolute degrees' numeric
+@attribute 'min absolute degree' numeric
+@attribute 'max absolute degree' numeric
+@attribute 'sum of all relative degrees' numeric
+@attribute 'mean relative degree' numeric
+@attribute 'median relative degree' numeric
+@attribute 'StDev of relative degrees' numeric
+@attribute 'min relative degree' numeric
+@attribute 'max relative degree' numeric
+@attribute 'convex hull area' numeric
+@attribute 'Average Peak Saccade Velocity' numeric
+@attribute 'Average Blink Rate per Minute' numeric
+@attribute 'stationary entropy' numeric
+@attribute 'transition entropy' numeric
+
+@data
+547,241.9403,0.442304,0.3606,0.320569,0.01965,3.16626,470,91703.349146,195.113509,172.428173,170.328477,1.310682,1351.898448,37.06471,0.078861,0.018805,0.190467,0.00257,1.38898,279.00501,6.527511,24044.014343,44.036656,38.144399,29.710897,0.25863,89.984708,50033.996187,91.805498,91.180648,46.960693,0.207536,176.868672,1181148.859365,262.476795,17,0.714136,1.075567

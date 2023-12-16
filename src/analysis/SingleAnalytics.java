@@ -84,6 +84,8 @@ public class SingleAnalytics {
 		JLabel partLabel = new JLabel("Participant: ");
 		JTextField partTextF = new JTextField(15);
 		JButton submitBtn = new JButton("Submit");
+		JButton saveConfigBtn = new JButton("Save Configuration");
+		JTextField saveNameTextF = new JTextField("Configuration Name", 50);
 
 		title.setFont(new Font("Verdana", Font.PLAIN, 30));
 		gazeTextF.setBackground(Color.WHITE);
@@ -97,6 +99,10 @@ public class SingleAnalytics {
 		outputTextF.setPreferredSize(new Dimension(50, 30));
 		partTextF.setPreferredSize(new Dimension(50, 30));
 		partLabel.setFont(new Font("Verdana", Font.PLAIN, 20));
+
+		saveNameTextF.setBackground(Color.WHITE);
+		saveNameTextF.setEditable(true);
+		saveNameTextF.setPreferredSize(new Dimension(50, 30));
 
 		pPanel.add(partLabel);
 		pPanel.add(partTextF);
@@ -128,6 +134,10 @@ public class SingleAnalytics {
 		panel.add(pPanel,c);
 		c.gridy=6;
 		panel.add(submitBtn, c);
+		c.gridy = 9;
+		panel.add(saveNameTextF, c);
+		c.gridy = 10;
+		panel.add(saveConfigBtn, c);
 
 		gazeBrowseBtn.addActionListener(e -> {
 			String temp = modifier.fileChooser("Select the gaze .csv file you would like to use", "/data/");
@@ -179,7 +189,9 @@ public class SingleAnalytics {
 				outputFolderPath = outputTextF.getText() + "/" + partTextF.getText();
 				pName = partTextF.getText();
 				
-				File participantFolder = new File(outputTextF.getText() + "/" + partTextF.getText());
+				startAnalytics(gazepointGZDPath, gazepointFXDPath, outputFolderPath, "");
+
+				/*File participantFolder = new File(outputTextF.getText() + "/" + partTextF.getText());
 
 				//creates the folder only if it doesn't exists already
 				if(!participantFolder.exists())
@@ -206,15 +218,92 @@ public class SingleAnalytics {
 					}
 
 				}
+				*/
+
 			}
 			
 		});
 		
-
 		return panel;
 
 	}
+
+	public static String getDirectory_Numbered(String outputFolderPath) {
+        File participantFolder = new File(outputFolderPath);
+		int index = 0;
+
+		int maxAttempts = 100;
+
+		String checkPath =  outputFolderPath;
+
+        //creates the folder only if it doesn't exists already
+        while (participantFolder.exists() && index < maxAttempts)
+        {
+            index += 1;
+			checkPath = outputFolderPath + "_("+index+")";
+			participantFolder = new File(checkPath);
+		}
+
+		boolean folderCreated = participantFolder.mkdir();
+		if(!folderCreated)
+		{
+			systemLogger.writeToSystemLog(Level.SEVERE, SingleAnalytics.class.getName(), "Unable to create participant's folder");
+			System.exit(0);
+		}
+
+		return checkPath;
+	}
+
+	public static String getDirectory_Terminated(String outputFolderPath) {
+		File participantFolder = new File(outputFolderPath);
+		if (!participantFolder.exists()) 
+		{
+			boolean folderCreated = participantFolder.mkdir();
+			if(!folderCreated)
+			{
+				systemLogger.writeToSystemLog(Level.SEVERE, SingleAnalytics.class.getName(), "Unable to create participant's folder");
+				System.exit(0);
+			}
+		}
+		else
+		{
+				systemLogger.writeToSystemLog(Level.SEVERE, SingleAnalytics.class.getName(), "Unable to create participant's folder");
+				System.exit(0);
+		}
+
+		return outputFolderPath;
+	}
 	
+	public static void startAnalytics(String gazepointGZDPath, String gazepointFXDPath, String outputFolderPath, String overwriteMode) {
+		String adjustedOutputFolderPath;
+		switch(overwriteMode) {
+			case "numbered": adjustedOutputFolderPath = getDirectory_Numbered(outputFolderPath);
+			default: adjustedOutputFolderPath = getDirectory_Terminated(outputFolderPath);
+		}
+		adjustedOutputFolderPath = getDirectory_Numbered(outputFolderPath);
+
+        //File participantFolder = new File(adjustedOutputFolderPath);
+
+		SingleAnalytics.analyzeData(gazepointGZDPath, gazepointFXDPath, adjustedOutputFolderPath);
+
+        //creates the folder only if it doesn't exists already
+		/*
+        if(!participantFolder.exists())
+        {
+            boolean folderCreated = participantFolder.mkdir();
+            if(!folderCreated)
+            {
+                JOptionPane.showMessageDialog(null, "Unable to create participant's folder", "Error Message", JOptionPane.ERROR_MESSAGE);
+                systemLogger.writeToSystemLog(Level.SEVERE, SingleAnalytics.class.getName(), "Unable to create participant's folder");
+                System.exit(0);
+            }
+            else
+            {
+                SingleAnalytics.analyzeData(gazepointGZDPath, gazepointFXDPath, outputFolderPath);
+            }
+        }
+		*/
+    }
 	
 	/**
 	 * Runs an analysis on the two files and all generated files will be in the ouputPath folder

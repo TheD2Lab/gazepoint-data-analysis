@@ -4,5 +4,5 @@
         "output-directory" : "data/output_folders",
         "participant-name" : "TestFile_Esther",
 
-        "overwrite-mode" : "overwrite"
+        "overwrite-mode" : "terminated"
 }

@@ -1,0 +1,6 @@
+@relation _graphEVDResults
+
+@attribute 'total number of L mouse clicks' numeric
+
+@data
+8

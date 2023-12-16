@@ -1,0 +1,166 @@
+Log was created onFri Dec 15 14:41:50 PST 2023
+
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully created file data/output_folders/TestFile_Esther/ScanPathFolder/T_Scan0.csv
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully converted CSV to ARFF data/output_folders/TestFile_Esther/ScanPathFolder/T_Scan0.arff
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully created file data/output_folders/TestFile_Esther/ScanPathFolder/T_Scan1.csv
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully converted CSV to ARFF data/output_folders/TestFile_Esther/ScanPathFolder/T_Scan1.arff
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully created file data/output_folders/TestFile_Esther/ScanPathFolder/T_Scan2.csv
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully converted CSV to ARFF data/output_folders/TestFile_Esther/ScanPathFolder/T_Scan2.arff
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully created file data/output_folders/TestFile_Esther/ScanPathFolder/T_Scan3.csv
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully converted CSV to ARFF data/output_folders/TestFile_Esther/ScanPathFolder/T_Scan3.arff
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully created file data/output_folders/TestFile_Esther/ScanPathFolder/primaryInstrumentAS0.csv
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully converted CSV to ARFF data/output_folders/TestFile_Esther/ScanPathFolder/primaryInstrumentAS0.arff
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully created file data/output_folders/TestFile_Esther/ScanPathFolder/primaryInstrumentAS1.csv
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully converted CSV to ARFF data/output_folders/TestFile_Esther/ScanPathFolder/primaryInstrumentAS1.arff
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully created file data/output_folders/TestFile_Esther/ScanPathFolder/primaryInstrumentAS2.csv
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully converted CSV to ARFF data/output_folders/TestFile_Esther/ScanPathFolder/primaryInstrumentAS2.arff
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully created file data/output_folders/TestFile_Esther/ScanPathFolder/primaryInstrumentAS3.csv
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully converted CSV to ARFF data/output_folders/TestFile_Esther/ScanPathFolder/primaryInstrumentAS3.arff
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully created file data/output_folders/TestFile_Esther/ScanPathFolder/primaryInstrumentAS4.csv
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully converted CSV to ARFF data/output_folders/TestFile_Esther/ScanPathFolder/primaryInstrumentAS4.arff
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully created file data/output_folders/TestFile_Esther/ScanPathFolder/primaryInstrumentAS5.csv
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully converted CSV to ARFF data/output_folders/TestFile_Esther/ScanPathFolder/primaryInstrumentAS5.arff
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully created file data/output_folders/TestFile_Esther/ScanPathFolder/primaryInstrumentAS6.csv
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully converted CSV to ARFF data/output_folders/TestFile_Esther/ScanPathFolder/primaryInstrumentAS6.arff
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully created file data/output_folders/TestFile_Esther/ScanPathFolder/primaryInstrumentAS7.csv
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully converted CSV to ARFF data/output_folders/TestFile_Esther/ScanPathFolder/primaryInstrumentAS7.arff
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully created file data/output_folders/TestFile_Esther/ScanPathFolder/primaryInstrumentAS8.csv
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully converted CSV to ARFF data/output_folders/TestFile_Esther/ScanPathFolder/primaryInstrumentAS8.arff
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully created file data/output_folders/TestFile_Esther/ScanPathFolder/primaryInstrumentAS9.csv
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully converted CSV to ARFF data/output_folders/TestFile_Esther/ScanPathFolder/primaryInstrumentAS9.arff
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully created file data/output_folders/TestFile_Esther/ScanPathFolder/primaryInstrumentAS10.csv
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully converted CSV to ARFF data/output_folders/TestFile_Esther/ScanPathFolder/primaryInstrumentAS10.arff
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully created file data/output_folders/TestFile_Esther/ScanPathFolder/primaryInstrumentAS11.csv
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully converted CSV to ARFF data/output_folders/TestFile_Esther/ScanPathFolder/primaryInstrumentAS11.arff
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully created file data/output_folders/TestFile_Esther/ScanPathFolder/CircularScan0.csv
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully converted CSV to ARFF data/output_folders/TestFile_Esther/ScanPathFolder/CircularScan0.arff
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully created file data/output_folders/TestFile_Esther/ScanPathFolder/CircularScan1.csv
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully converted CSV to ARFF data/output_folders/TestFile_Esther/ScanPathFolder/CircularScan1.arff
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully created file data/output_folders/TestFile_Esther/ScanPathFolder/CircularScan2.csv
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully converted CSV to ARFF data/output_folders/TestFile_Esther/ScanPathFolder/CircularScan2.arff
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully created file data/output_folders/TestFile_Esther/ScanPathFolder/CircularScan3.csv
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully converted CSV to ARFF data/output_folders/TestFile_Esther/ScanPathFolder/CircularScan3.arff
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully created file data/output_folders/TestFile_Esther/ScanPathFolder/CircularScan4.csv
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully converted CSV to ARFF data/output_folders/TestFile_Esther/ScanPathFolder/CircularScan4.arff
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully created file data/output_folders/TestFile_Esther/ScanPathFolder/CircularScan5.csv
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully converted CSV to ARFF data/output_folders/TestFile_Esther/ScanPathFolder/CircularScan5.arff
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully created file data/output_folders/TestFile_Esther/ScanPathFolder/CircularScan6.csv
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully converted CSV to ARFF data/output_folders/TestFile_Esther/ScanPathFolder/CircularScan6.arff
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully created file data/output_folders/TestFile_Esther/ScanPathFolder/CircularScan7.csv
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully converted CSV to ARFF data/output_folders/TestFile_Esther/ScanPathFolder/CircularScan7.arff
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully created file data/output_folders/TestFile_Esther/ScanPathFolder/CircularScan8.csv
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully converted CSV to ARFF data/output_folders/TestFile_Esther/ScanPathFolder/CircularScan8.arff
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully created file data/output_folders/TestFile_Esther/ScanPathFolder/CircularScan9.csv
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully converted CSV to ARFF data/output_folders/TestFile_Esther/ScanPathFolder/CircularScan9.arff
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully created file data/output_folders/TestFile_Esther/ScanPathFolder/CircularScan10.csv
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully converted CSV to ARFF data/output_folders/TestFile_Esther/ScanPathFolder/CircularScan10.arff
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully created file data/output_folders/TestFile_Esther/ScanPathFolder/CircularScan11.csv
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully converted CSV to ARFF data/output_folders/TestFile_Esther/ScanPathFolder/CircularScan11.arff
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully created file data/output_folders/TestFile_Esther/ScanPathFolder/CircularScan12.csv
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully converted CSV to ARFF data/output_folders/TestFile_Esther/ScanPathFolder/CircularScan12.arff
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully created file data/output_folders/TestFile_Esther/ScanPathFolder/CircularScan13.csv
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully converted CSV to ARFF data/output_folders/TestFile_Esther/ScanPathFolder/CircularScan13.arff
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully created file data/output_folders/TestFile_Esther/ScanPathFolder/CircularScan14.csv
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully converted CSV to ARFF data/output_folders/TestFile_Esther/ScanPathFolder/CircularScan14.arff
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully created file data/output_folders/TestFile_Esther/ScanPathFolder/CircularScan15.csv
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully converted CSV to ARFF data/output_folders/TestFile_Esther/ScanPathFolder/CircularScan15.arff
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully created file data/output_folders/TestFile_Esther/ScanPathFolder/CircularScan16.csv
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully converted CSV to ARFF data/output_folders/TestFile_Esther/ScanPathFolder/CircularScan16.arff
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully created file data/output_folders/TestFile_Esther/ScanPathFolder/CircularScan17.csv
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully converted CSV to ARFF data/output_folders/TestFile_Esther/ScanPathFolder/CircularScan17.arff
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully created file data/output_folders/TestFile_Esther/ScanPathFolder/CircularScan18.csv
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.WindowOperations - Successfully converted CSV to ARFF data/output_folders/TestFile_Esther/ScanPathFolder/CircularScan18.arff
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.fixation - done writing fixation data to data/output_folders/TestFile_Esther/_graphFXDResults.csv
+Fri Dec 15 14:41:50 PST 2023
+	INFO: analysis.event - done writing event data to data/output_folders/TestFile_Esther/_graphEVDResults.csv
+Fri Dec 15 14:41:51 PST 2023
+	INFO: analysis.gaze - done writing gaze data to data/output_folders/TestFile_Esther/_graphGZDResults.csv
+Fri Dec 15 14:41:51 PST 2023
+	INFO: analysis.gaze - done writing gaze data to data/output_folders/TestFile_Esther/baseline.csv
+Fri Dec 15 14:41:51 PST 2023
+	INFO: analysis.WindowOperations - Successfully converted CSV to ARFF data/output_folders/TestFile_Esther/baseline.arff
+Fri Dec 15 14:41:51 PST 2023
+	INFO: analysis.WindowOperations - Successfully converted CSV to ARFF data/output_folders/TestFile_Esther/_graphFXDResults.arff
+Fri Dec 15 14:41:51 PST 2023
+	INFO: analysis.WindowOperations - Successfully converted CSV to ARFF data/output_folders/TestFile_Esther/_graphEVDResults.arff
+Fri Dec 15 14:41:51 PST 2023
+	INFO: analysis.WindowOperations - Successfully converted CSV to ARFF data/output_folders/TestFile_Esther/_graphGZDResults.arff
+Fri Dec 15 14:41:51 PST 2023
+	INFO: analysis.WindowOperations - Successfully converted CSV to ARFF data/output_folders/TestFile_Esther/combineResults.arff
+Fri Dec 15 14:41:51 PST 2023
+	INFO: analysis.AOI - Done writing AOI fixation results to data/output_folders/TestFile_Esther/_AOI/_aoi_graphFDXResults.csv
+Fri Dec 15 14:41:51 PST 2023
+	INFO: analysis.AOI - Done writing AOI transition data to data/output_folders/TestFile_Esther/_AOI/_aoi_transitionFeatures.csv
+Fri Dec 15 14:41:51 PST 2023
+	INFO: analysis.AOI - Done writing AOI proportionate features to data/output_folders/TestFile_Esther/_AOI/_aoi_proportionateFeatures.csv

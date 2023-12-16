@@ -1,0 +1,14 @@
+A, No AOI
+L, Horizontal Altitude-Heading
+F, Heading
+M, MSL Altitude-Horizontal Altitude
+C, Horizontal Altitude
+H, Vertical Speed
+I, MSL Altitude-Vertical Speed
+D, Turn Coordinator
+N, Heading-Vertical Speed
+B, Outside
+E, Airspeed
+G, MSL Altitude
+K, Airspeed-Horizontal Altitude
+J, Turn Coordinator-Heading

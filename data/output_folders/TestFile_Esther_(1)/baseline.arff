@@ -1,0 +1,9 @@
+@relation baseline
+
+@attribute 'total number of valid recordings' numeric
+@attribute 'average pupil size of left eye' numeric
+@attribute 'average pupil size of right eye' numeric
+@attribute 'average pupil size of both eyes' numeric
+
+@data
+8326,5.099542,4.999772,5.049657

@@ -1,0 +1,9 @@
+@relation _graphGZDResults
+
+@attribute 'total number of valid recordings' numeric
+@attribute 'average pupil size of left eye' numeric
+@attribute 'average pupil size of right eye' numeric
+@attribute 'average pupil size of both eyes' numeric
+
+@data
+24652,5.054008,4.969636,5.011822

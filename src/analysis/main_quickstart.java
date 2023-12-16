@@ -30,15 +30,16 @@ public class main_quickstart {
         String gazepointGZDPath = (String)config.get("gaze-filepath");
         String gazepointFXDPath = (String)config.get("fixation-filepath");
         String outputFolderPath = (String)config.get("output-directory") + "/" + (String)config.get("participant-name");
+        String overwriteMode = (String)config.get("overwrite-mode");
 
         System.out.println("gazepointGZDPath: [ "+gazepointGZDPath+" ]");
         System.out.println("gazepointFXDPath: [ "+gazepointFXDPath+" ]");
         System.out.println("outputPath + participantName: [ "+outputFolderPath+" ]");
 
-        startAnalytics(gazepointGZDPath, gazepointFXDPath, outputFolderPath);
+        SingleAnalytics.startAnalytics(gazepointGZDPath, gazepointFXDPath, outputFolderPath, overwriteMode);
 
     }
-
+    /*
     private static void startAnalytics(String gazepointGZDPath, String gazepointFXDPath, String outputFolderPath) {
         File participantFolder = new File(outputFolderPath);
 
@@ -58,4 +59,5 @@ public class main_quickstart {
             }
         }
     }
+    */
 }

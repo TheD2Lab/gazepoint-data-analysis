@@ -1,0 +1,74 @@
+@relation CircularScan3
+
+@attribute MEDIA_ID numeric
+@attribute MEDIA_NAME {'Cessna 172 X-plane 12'}
+@attribute CNT numeric
+@attribute 'TIME(2023/01/26 17:04:02.089)' numeric
+@attribute TIMETICK(f=10000000) numeric
+@attribute FPOGX numeric
+@attribute FPOGY numeric
+@attribute FPOGS numeric
+@attribute FPOGD numeric
+@attribute FPOGID numeric
+@attribute FPOGV numeric
+@attribute BPOGX numeric
+@attribute BPOGY numeric
+@attribute BPOGV numeric
+@attribute CX numeric
+@attribute CY numeric
+@attribute CS numeric
+@attribute KB string
+@attribute KBS numeric
+@attribute USER string
+@attribute LPCX numeric
+@attribute LPCY numeric
+@attribute LPD numeric
+@attribute LPS numeric
+@attribute LPV numeric
+@attribute RPCX numeric
+@attribute RPCY numeric
+@attribute RPD numeric
+@attribute RPS numeric
+@attribute RPV numeric
+@attribute BKID numeric
+@attribute BKDUR numeric
+@attribute BKPMIN numeric
+@attribute LPMM numeric
+@attribute LPMMV numeric
+@attribute RPMM numeric
+@attribute RPMMV numeric
+@attribute DIAL numeric
+@attribute DIALV numeric
+@attribute GSR numeric
+@attribute GSRV numeric
+@attribute HR numeric
+@attribute HRV numeric
+@attribute HRP numeric
+@attribute IBI numeric
+@attribute TTL0 numeric
+@attribute TTL1 numeric
+@attribute TTL2 numeric
+@attribute TTL3 numeric
+@attribute TTL4 numeric
+@attribute TTL5 numeric
+@attribute TTL6 numeric
+@attribute TTLV numeric
+@attribute PIXS numeric
+@attribute PIXV numeric
+@attribute AOI {'MSL Altitude','Vertical Speed','MSL Altitude-Vertical Speed','Horizontal Altitude'}
+@attribute SACCADE_MAG numeric
+@attribute SACCADE_DIR numeric
+@attribute VID_FRAME numeric
+@attribute '' string
+@attribute SACCADE_VEL numeric
+@attribute SACCADE_PV numeric
+@attribute SACCADE_AMPL numeric
+
+@data
+0,'Cessna 172 X-plane 12',11150,145.36139,19994779666088,0.62275,0.68004,145.02399,0.3374,261,1,0.6126,0.65442,1,0.96771,0.36481,0,?,0,?,0.45826,0.4428,25.60642,0.93752,1,0.71153,0.45909,24.31493,0.93752,1,0,0,13,5.29386,1,5.03801,1,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,0,0,0,'MSL Altitude',34.03154,250.59128,0,?,722.581546,80.305643,0.793644
+0,'Cessna 172 X-plane 12',11222,146.43475,19994790399847,0.6316,0.69983,146.0412,0.39355,263,1,0.5955,0.85831,1,0.96771,0.36481,0,?,0,?,0.46788,0.44501,25.21075,0.93752,1,0.72029,0.46488,25.06802,0.93752,1,0,0,13,5.27588,1,5.0055,1,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,0,0,0,'MSL Altitude',45.59329,330.85519,0,?,0,598.51457,1.063219
+0,'Cessna 172 X-plane 12',11257,146.79181,19994793970434,0.5927,0.86994,146.48395,0.30786,264,1,0.62006,0.88271,1,0.96771,0.36481,0,?,0,?,0.48558,0.44477,26.35845,0.90972,1,0.73801,0.46789,25.65962,0.90972,1,0,0,13,5.33812,1,5.09919,1,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,0,0,0,'Vertical Speed',198.32013,247.87656,0,?,694.215426,240.496969,4.615277
+0,'Cessna 172 X-plane 12',11270,146.96356,19994795687978,0.61551,0.7309,146.81158,0.15198,265,1,0.62203,0.66503,1,0.96771,0.36481,0,?,0,?,0.49214,0.43436,26.14726,0.92385,1,0.74466,0.45851,25.55402,0.92385,1,0,0,13,5.37178,1,5.13196,1,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,0,0,0,'MSL Altitude-Vertical Speed',156.41927,73.74065,0,?,429.348763,47.216939,3.643143
+0,'Cessna 172 X-plane 12',11308,147.37408,19994799794188,0.62298,0.67669,146.97516,0.39893,266,1,0.63648,0.69329,1,0.96771,0.36481,0,?,0,?,0.49226,0.4355,26.99916,0.9169,1,0.7453,0.461,26.0171,0.92373,1,0,0,13,5.43657,1,5.19131,1,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,0,0,0,'MSL Altitude',60.27797,76.23515,0,?,185.703863,69.633479,1.40554
+0,'Cessna 172 X-plane 12',11341,147.71271,19994803179681,0.62266,0.69905,147.39337,0.31934,267,1,0.48159,0.62188,1,0.96771,0.36481,0,?,0,?,0.47747,0.43671,26.5232,0.93752,1,0.73114,0.4584,26.19798,0.93752,1,0,0,13,5.33506,1,5.24463,1,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,0,0,0,'MSL Altitude',24.15662,268.54263,0,?,793.026696,40.935458,0.56337
+0,'Cessna 172 X-plane 12',11366,147.97992,19994805851761,0.48509,0.63222,147.74603,0.23389,268,1,0.48619,0.61679,1,0.96771,0.36481,0,?,0,?,0.47642,0.43472,25.35341,0.92385,1,0.72962,0.45558,25.00376,0.91701,1,0,0,13,5.11145,1,5.01378,1,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,0,0,0,'Horizontal Altitude',273.81824,164.71666,0,?,616.431496,378.093801,6.359828
