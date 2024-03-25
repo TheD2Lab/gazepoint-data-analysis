@@ -1,4 +1,4 @@
-package wekaext;
+package wekaext0;
 
 public class wekamain {
 	public static void main(String[] args) throws Exception {

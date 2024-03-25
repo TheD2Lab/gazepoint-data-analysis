@@ -1,4 +1,4 @@
-package wekaext;
+package wekaext0;
 
 // java libraries
 

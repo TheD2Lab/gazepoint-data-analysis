@@ -1,4 +1,4 @@
-package wekaext;
+package wekaext0;
 import java.io.File;
 import java.util.Scanner;
 
