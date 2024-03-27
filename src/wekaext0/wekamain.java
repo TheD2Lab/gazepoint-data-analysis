@@ -1,5 +1,7 @@
 package wekaext0;
 
+import wekaext.WekaExperiment;
+
 public class wekamain {
 	public static void main(String[] args) throws Exception {
 		

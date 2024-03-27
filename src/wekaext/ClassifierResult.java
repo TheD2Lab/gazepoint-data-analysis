@@ -1,4 +1,4 @@
-package wekaext0;
+package wekaext;
 
 import weka.classifiers.Classifier;
 
@@ -7,7 +7,7 @@ public class ClassifierResult {
     private Double score;
     private int significance;
 
-    public  ClassifierResult(Classifier classifier, Double score, int significance){
+    public ClassifierResult(Classifier classifier, Double score, int significance){
         this.classifier = classifier;
         this.score = score;
         this.significance = significance;
