@@ -49,7 +49,7 @@ public class Analysis {
                 
                 fixations.writeToCSV(pDirectory, pName + "_fixations");
 
-                ArrayList<List<String>> descriptiveGazeMeasures = generateResults(allGaze);
+                ArrayList<List<String>> descriptiveGazeMeasures = generateResults(allGaze, fixations);
                 FileHandler.writeToCSV(descriptiveGazeMeasures, pDirectory, pName + "_DGMs");
 
                 // If empty, add header row
@@ -64,6 +64,7 @@ public class Analysis {
                 dgms.add(0, pName);
                 allParticipantDGMs.add(dgms);
 
+                // File generators
                 Windows.generateWindows(allGaze, pDirectory, params.getWindowSettings());
                 AreaOfInterests.generateAOIs(allGaze, pDirectory, pName);
                 Sequences.generateSequenceFiles(validFixations, pDirectory, sequences);
@@ -96,12 +97,12 @@ public class Analysis {
     }
 
     // This function should only take in raw gaze data as a parameter, otherwise derived DataEntrys will be produced with incorrect data
-    public static ArrayList<List<String>> generateResults(DataEntry rawData) {
-        DataEntry allGaze = rawData;
-        DataEntry fixations = DataFilter.filterByFixations(allGaze);
-
+    public static ArrayList<List<String>> generateResults(DataEntry allGaze, DataEntry fixations) {
         DataEntry validGaze = DataFilter.applyScreenSize(DataFilter.filterByValidity(allGaze), SCREEN_WIDTH, SCREEN_HEIGHT);
         DataEntry validFixations = DataFilter.applyScreenSize(DataFilter.filterByValidity(fixations), SCREEN_WIDTH, SCREEN_HEIGHT);
+
+        // DataEntry validGaze = DataFilter.applyScreenSize(allGaze, SCREEN_WIDTH, SCREEN_HEIGHT);
+        // DataEntry validFixations = DataFilter.applyScreenSize(fixations, SCREEN_WIDTH, SCREEN_HEIGHT);
 
         ArrayList<List<String>> results = new ArrayList<List<String>>();
         results.add(new ArrayList<String>()); //Headers
@@ -131,11 +132,11 @@ public class Analysis {
         results.get(0).addAll(entropy.keySet());
         results.get(1).addAll(entropy.values());
 
-        LinkedHashMap<String,String> gaze = Gaze.analyze(validFixations);
+        LinkedHashMap<String,String> gaze = Gaze.analyze(validGaze);
         results.get(0).addAll(gaze.keySet());
         results.get(1).addAll(gaze.values());
 
-        LinkedHashMap<String,String> event = Event.analyze(validFixations);
+        LinkedHashMap<String,String> event = Event.analyze(validGaze);
         results.get(0).addAll(event.keySet());
         results.get(1).addAll(event.values());
 

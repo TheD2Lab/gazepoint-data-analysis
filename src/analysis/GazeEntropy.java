@@ -3,7 +3,6 @@ package analysis;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
 
 public class GazeEntropy {
@@ -64,12 +63,12 @@ public class GazeEntropy {
 
         results.put(
             "stationary entropy", //Output Header
-            String.valueOf(String.valueOf(getStationaryEntropy(aoiProbability))) //Output Value
+            String.valueOf(getStationaryEntropy(aoiProbability)) //Output Value
             );
 
         results.put(
             "transition entropy", //Output Header
-            String.valueOf(String.valueOf(getTransitionEntropy(aoiProbability,transitionProbability))) //Output Value
+            String.valueOf(getTransitionEntropy(aoiProbability, transitionProbability)) //Output Value
             );
     
         return results;
@@ -90,7 +89,7 @@ public class GazeEntropy {
 		for (Map.Entry<String,HashMap<String,Double>> entry : transitionMatrix.entrySet()) {
     		double pijSum = 0;
     		for (Map.Entry<String, Double> edge : entry.getValue().entrySet()) {
-    			pijSum += edge.getValue() * Math.log(edge.getValue());
+    			pijSum += edge.getValue() * Math.log10(edge.getValue());
     		}
     		transitionEntropy += pijSum * -aoiProbability.get(entry.getKey());
     	}

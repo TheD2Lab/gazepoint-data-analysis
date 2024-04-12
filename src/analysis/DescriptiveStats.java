@@ -65,22 +65,22 @@ public class DescriptiveStats {
 
 
 	public static double getMeanOfIntegers(ArrayList<Integer> allIntegers){
-		return (allIntegers.size() == 0) ? 0 : getSumOfIntegers(allIntegers)/allIntegers.size();
+		return (allIntegers.size() == 0) ? Double.NaN : getSumOfIntegers(allIntegers)/allIntegers.size();
 	}
 
 	public static double getMeanOfDoubles(ArrayList<Double> allDoubles){
-		return (allDoubles.size() == 0) ? 0 : getSumOfDoubles(allDoubles)/allDoubles.size();
+		return (allDoubles.size() == 0) ? Double.NaN : getSumOfDoubles(allDoubles)/allDoubles.size();
 	}
 
 	public static double getMean(Double[] allDoubles){
-		if (allDoubles.length == 0) return 0;
+		if (allDoubles.length == 0) return Double.NaN;
 
 		double average = getSum(allDoubles)/allDoubles.length;
 		return average;
 	}
 
 	public static double getMedianOfIntegers(ArrayList<Integer> allIntegers) {
-		if (allIntegers.size() == 0) return 0;
+		if (allIntegers.size() == 0) return Double.NaN;
 
 		Collections.sort(allIntegers);
 		int middle = allIntegers.size()/2;
@@ -92,7 +92,7 @@ public class DescriptiveStats {
 	}
 
 	public static double getMedianOfDoubles(ArrayList<Double> allDoubles) {
-		if (allDoubles.size() == 0) return 0;
+		if (allDoubles.size() == 0) return Double.NaN;
 
 		Collections.sort(allDoubles);
 		int middle = allDoubles.size()/2;
@@ -104,7 +104,7 @@ public class DescriptiveStats {
 	}
 
 	public static double getMedian(Double[] allDoubles){
-		if (allDoubles.length == 0) return 0;
+		if (allDoubles.length == 0) return Double.NaN;
 
 		Arrays.sort(allDoubles);
 		if (allDoubles.length%2 == 1){
@@ -116,7 +116,7 @@ public class DescriptiveStats {
 	}
 
 	public static double getStDevOfIntegers(ArrayList<Integer> allIntegers){
-		if (allIntegers.size() == 0) return 0;
+		if (allIntegers.size() == 0) return Double.NaN;
 
 		double sum = 0;
 		double mean = getMeanOfIntegers(allIntegers);
@@ -129,7 +129,7 @@ public class DescriptiveStats {
 	}
 
 	public static double getStDevOfDoubles(ArrayList<Double> allDoubles){
-		if (allDoubles.size() == 0) return 0;
+		if (allDoubles.size() == 0) return Double.NaN;
 
 		double sum = 0;
 		double mean = getMeanOfDoubles(allDoubles);
@@ -140,7 +140,7 @@ public class DescriptiveStats {
 	}
 
 	public static double getStDev(Double[] allDoubles){
-		if (allDoubles.length == 0) return 0;
+		if (allDoubles.length == 0) return Double.NaN;
 
 		double sum = 0;
 		double mean = getMean(allDoubles);
@@ -153,27 +153,27 @@ public class DescriptiveStats {
 	}
 
 	public static double getMinOfIntegers(ArrayList<Integer> allIntegers){
-		return (allIntegers.size() == 0) ? 0 : Collections.min(allIntegers);
+		return (allIntegers.size() == 0) ? Double.NaN : Collections.min(allIntegers);
 	}
 
 	public static double getMinOfDoubles(ArrayList<Double> allDoubles){
-		return (allDoubles.size() == 0) ? 0 : Collections.min(allDoubles);
+		return (allDoubles.size() == 0) ? Double.NaN : Collections.min(allDoubles);
 	}
 
 	public static double getMin(Double[] allDoubles){
-		return (allDoubles.length == 0) ? 0 :Collections.min(Arrays.asList(allDoubles));
+		return (allDoubles.length == 0) ? Double.NaN :Collections.min(Arrays.asList(allDoubles));
 	}
 
 	public static double getMaxOfIntegers(ArrayList<Integer> allIntegers){
-		return (allIntegers.size() == 0) ? 0 : Collections.max(allIntegers);
+		return (allIntegers.size() == 0) ? Double.NaN : Collections.max(allIntegers);
 	}
 
 	public static double getMaxOfDoubles(ArrayList<Double> allDoubles){
-		return (allDoubles.size() == 0) ? 0 : Collections.max(allDoubles);
+		return (allDoubles.size() == 0) ? Double.NaN : Collections.max(allDoubles);
 	}
 
 	public static double getMax(Double[] allDoubles){
-		return (allDoubles.length == 0) ? 0 : Collections.max(Arrays.asList(allDoubles));
+		return (allDoubles.length == 0) ? Double.NaN : Collections.max(Arrays.asList(allDoubles));
 	}
 
 }

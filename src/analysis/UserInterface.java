@@ -1,13 +1,24 @@
 package analysis;
 
-import java.awt.*;
+import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
 import java.awt.event.ItemEvent;
 import java.awt.image.BufferedImage;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.io.File;
+import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Hashtable;
+import java.util.List;
+
 import javax.swing.filechooser.FileNameExtensionFilter;
+
+import com.opencsv.CSVReader;
 
 public class UserInterface {
 
@@ -288,17 +299,7 @@ public class UserInterface {
         componentGBC.gridwidth = 1;
         windowsPanel.add(eventLabel, componentGBC);
 
-        String[] eventOptions = new String[] {"Total Number of Fixations",
-                                              "Sum of all fixation duration (s)",
-                                              "Mean fixation duration (s)",
-                                              "Median fixation duration (s)",
-                                              "St.Dev. of fixation durations (s)",
-                                              "Min. fixation duration (s)",
-                                              "Max. fixation duration (s)",
-                                              "total number of saccades",
-                                              "sum of all saccade length"
-                                             };
-        eventComboBox = new JComboBox<String>(eventOptions);
+        eventComboBox = new JComboBox<String>(new String[0]);
         componentGBC.insets = new Insets(0, 0, 0, 0);
         componentGBC.gridx = 1;
         componentGBC.gridy = 11;
@@ -596,6 +597,14 @@ public class UserInterface {
         hoppingHopSizeField.addActionListener(e -> {
             windowSettings.hoppingHopSize = Integer.parseInt(hoppingHopSizeField.getText());
         });
+
+        eventTimeoutField.addActionListener(e -> {
+            windowSettings.eventTimeout = Integer.parseInt(eventTimeoutField.getText());
+        });
+
+        eventComboBox.addItemListener(e -> {
+            windowSettings.event = (String) eventComboBox.getSelectedItem();
+        });
     }
 
     private void selectInputFiles() {
@@ -613,6 +622,13 @@ public class UserInterface {
         }
 
         fileCountLabel.setText(inputFiles.length + " files selected");
+
+        List<String> headers = getHeaders(inputFiles[0]);
+        eventComboBox.removeAllItems();
+        for (String s : headers) {
+            eventComboBox.addItem(s);
+        }
+
     }
 
     private void selectFileDirectory() {
@@ -668,7 +684,35 @@ public class UserInterface {
         tabs.addTab("Help", helpPanelScrollable);
     }
 
-    private boolean validateFields() {
+    private static boolean validateFields() {
         return false;
+    }
+
+    private static List<String> getHeaders(File f) {
+        List<String> numericHeaders = new ArrayList<String>();
+
+        try {
+            CSVReader reader = new CSVReader(new FileReader(f));
+
+            List<String> headers = Arrays.asList(reader.readNext());
+            List<String> values = Arrays.asList(reader.readNext());
+
+            for (int i = 0; i < headers.size(); i++) {
+                String header = headers.get(i);
+                String val = values.get(i);
+
+                if (isNumeric(val)) numericHeaders.add(header);
+            }
+
+            reader.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return numericHeaders;
+    }
+
+    public static boolean isNumeric(String str) {
+        return str.matches("-?\\d+(\\.\\d+)?");  //match a number with optional '-' and decimal.
     }
 }

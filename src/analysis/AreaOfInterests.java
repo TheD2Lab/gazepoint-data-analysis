@@ -36,6 +36,7 @@ public class AreaOfInterests {
         
         LinkedHashMap<String, DataEntry> aoiFixationMetrics = new LinkedHashMap<>();
         DataEntry allFixations = DataFilter.filterByValidity(DataFilter.filterByFixations(allGazeData));
+        //System.out.println(allFixations.rowCount());
         for (int i = 0; i < allFixations.rowCount(); i++) {
             String aoi = allFixations.getValue(AOI_INDEX, i);
             String aoiKey = aoi.equals("") ? "No AOI" : aoi;
@@ -68,15 +69,17 @@ public class AreaOfInterests {
         boolean isFirst = true;
         Set<String> aoiKeySet = aoiMetrics.keySet();
         
+        //int aoiFixationCount = 0;
         int row = 1;
         for (String aoiKey : aoiKeySet) {
             DataEntry aoi = aoiMetrics.get(aoiKey);
             DataEntry aoiFixations = aoiFixationMetrics.get(aoiKey);
+            //aoiFixationCount += aoiFixations.rowCount();
 
             aoi.writeToCSV(outputDirectory + "/AOIs", aoiKey + "_all_gaze");
 
-            if (aoi.rowCount() >= 2) {
-                ArrayList<List<String>> results = Analysis.generateResults(aoi);
+            // if (aoi.rowCount() >= 2) {
+                ArrayList<List<String>> results = Analysis.generateResults(aoi, aoiFixations);
                 if (isFirst) { //
                     isFirst = false;
                     List<String> headers = results.get(0);
@@ -88,16 +91,17 @@ public class AreaOfInterests {
                 metrics.get(row).addAll(getProportions(allFixations, aoiFixations, totalDuration));
                 validAOIs.put(aoiKey, aoiFixations);
                 row++;
-            }
+            // }
         }
-        ArrayList<ArrayList<String>> pairResults = generatePairResults(allFixations, aoiMetrics);
-        for (int i = 0; i < pairResults.size(); i++) { //Write values to all rows
+        ArrayList<List<String>> pairResults = generatePairResults(allFixations, aoiMetrics);
+        /*for (int i = 0; i < pairResults.size(); i++) { //Write values to all rows
             for (String s : perAoiHeaders) {
                 metrics.get(0).add(s + "_" + i); //Adds headersfor each pair.
             }
             metrics.get(i + 1).addAll(pairResults.get(i));
-        }
+        }*/
         FileHandler.writeToCSV(metrics, outputDirectory, fileName + "_AOI_DGMs");
+        FileHandler.writeToCSV(pairResults, outputDirectory, fileName+"_AOI_Transitions");
     }
 
     // public static ArrayList<String> generateAreaOfInterestResults(DataEntry all,DataEntry aoi, double totalDuration) {
@@ -127,7 +131,7 @@ public class AreaOfInterests {
         return durationSum;
     }
 
-    public static ArrayList<ArrayList<String>> generatePairResults(DataEntry fixations, LinkedHashMap<String,DataEntry> validAOIs) {
+    public static ArrayList<List<String>> generatePairResults(DataEntry fixations, LinkedHashMap<String,DataEntry> validAOIs) {
         LinkedHashMap<String, ArrayList<Integer>> totalTransitions = new LinkedHashMap<>(); // ArrayList<Integer>(Transtions, Inclusive, Exlusive);
         LinkedHashMap<String,LinkedHashMap<String, Integer>> transitionCounts = new LinkedHashMap<>();
         for (int i = 0; i < fixations.rowCount()-1; i++) {
@@ -160,24 +164,27 @@ public class AreaOfInterests {
             }
         }
 
-        ArrayList<ArrayList<String>> results = new ArrayList<>();
-        int i = 0; //Incrementer
+        ArrayList<List<String>> results = new ArrayList<>();
+        results.add(new ArrayList<String>());
+        results.get(0).addAll(Arrays.asList(perAoiHeaders));
+
+        int i = 1; //Incrementer starts at since element 0 is the list of headers.
         for (String key : totalTransitions.keySet()) {
             int transitionsInclusive = totalTransitions.get(key).get(0);
             int transitionsExclusive = totalTransitions.get(key).get(1);
-            results.add(new ArrayList<>());
             for (String otherKey : totalTransitions.keySet()) {
                 int transitions = 0;
                 if(transitionCounts.get(key).containsKey(otherKey)) {
                     transitions = transitionCounts.get(key).get(otherKey);
                 }
                  //Number of transtions from other AOI to current AOI
-                results.get(i).add(otherKey);
+                results.add(new ArrayList<>());
+                results.get(i).add(otherKey + " -> " + key);
                 results.get(i).add(String.valueOf(transitions));
                 results.get(i).add(String.valueOf((double)transitions/(double)transitionsInclusive));
                 results.get(i).add(String.valueOf((double)transitions/(double)transitionsExclusive));
+                i++;
             }
-            i++;
         }
         return results;
     }

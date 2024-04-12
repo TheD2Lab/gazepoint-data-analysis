@@ -95,13 +95,14 @@ public class ConvexHull {
             return new ArrayList<>();
         }
 
+
         Stack<Point2D.Double> stack = new Stack<>();
         stack.push(sorted.get(0));
         stack.push(sorted.get(1));
         for (int i = 2; i < sorted.size(); i++) {
-            // if (stack.size() < 2) { //AOI has invalid hull or orentiation, cancel calculations
-            //     return new ArrayList<>();
-            // }
+            // Invalid stack size, cancel calculations
+            if (stack.size() < 2) return new ArrayList<>();
+
             Point2D.Double head = sorted.get(i);
             Point2D.Double middle = stack.pop();
             Point2D.Double tail = stack.peek();
@@ -139,7 +140,6 @@ public class ConvexHull {
      *               is returned.
      */
     protected static Point2D.Double getLowestPoint(List<Point2D.Double> points) {
-
         Point2D.Double lowest = points.get(0);
 
         for(int i = 1; i < points.size(); i++) {
@@ -247,6 +247,8 @@ public class ConvexHull {
     }
 
 	public static double getPolygonArea(List<Point2D.Double> allPoints) {
+        if (allPoints.size() == 0) return Double.NaN;
+
 		int i, j, n = allPoints.size();
 		double area = 0;
 

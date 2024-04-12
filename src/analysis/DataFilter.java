@@ -92,11 +92,6 @@ public class DataFilter {
             newRow.set(fixationXIndex,String.valueOf(Double.valueOf(newRow.get(fixationXIndex)) * screenWidth));
             newRow.set(fixationYIndex,String.valueOf(Double.valueOf(newRow.get(fixationYIndex)) * screenHeight));
 
-            // if (Double.valueOf(newRow.get(fixationXIndex)) > 1920) {
-            //     System.out.println("Coordinate exceeded");
-            //     System.out.println(newRow.get(fixationXIndex));
-            // }
-
             filtered.process(newRow);
         }
 

@@ -173,7 +173,7 @@ public class Saccades {
 	}
 
 	public static double getFixationToSaccadeRatio(ArrayList<Double> allFixationDurations, ArrayList<Double> allSaccadeDurations){
-        if (allSaccadeDurations.size() == 0) return 0;
+        if (allSaccadeDurations.size() == 0) return Double.NaN;
 
 		double fixationDuration = DescriptiveStats.getSumOfDoubles(allFixationDurations);
 		double saccadeDuration = DescriptiveStats.getSumOfDoubles(allSaccadeDurations);
