@@ -1,17 +1,32 @@
 package analysis;
 
 import java.io.File;
-import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
-
-import com.opencsv.CSVReader;
+import java.util.Set;
 
 public class Windows {
 
     final static String TIME_INDEX = "TIME";
     final static int BASELINE_LENGTH = 120;
+
+    // Set of supported events that utilize the fixation file
+    final static Set<String> fixationEvents = new HashSet<String>(
+        Arrays.asList(
+        "FPOGD",
+        "SACCADE_MAG",
+        "SACCADE_DUR" 
+    ));
+
+    // Set of supported events that utilize the allGaze file
+    final static Set<String> allGazeEvents = new HashSet<String>(
+        Arrays.asList(
+        "LPMM",
+        "RPMM",
+        "BKPMIN"
+    ));
 
     public static void generateWindows(DataEntry allGaze, String outputDirectory, WindowSettings settings) {
         List<String> headers = allGaze.getHeaders();
@@ -60,7 +75,6 @@ public class Windows {
                 Double t = Double.valueOf(allGaze.getValue(TIME_INDEX, i));
 
                 if (t > end) { 
-                    System.out.println(end);
                     end += windowSize;
                     windows.add(window);
                     window = window.clone();
@@ -80,8 +94,8 @@ public class Windows {
         if (settings.hoppingEnabled) {
             ArrayList<DataEntry> windows = new ArrayList<DataEntry>();
             DataEntry window = new DataEntry(headers);
-            int windowSize = settings.hoppingWindowSize;
-            int hopSize = settings.hoppingHopSize;
+            double windowSize = settings.hoppingWindowSize;
+            double hopSize = settings.hoppingHopSize;
             double start = Double.valueOf(allGaze.getValue(TIME_INDEX, 0));
             double end = start + windowSize;
 
@@ -122,7 +136,7 @@ public class Windows {
             double timeoutLength = settings.eventTimeout;
             double eventEnd = 0;
 
-            double baselineValue = getEventBaseline(outputDirectory, event);
+            double baselineValue = getEventBaselineValue(outputDirectory, event);
 
             for (int i = 0; i < allGaze.rowCount(); i++) {
                 Double t = Double.valueOf(allGaze.getValue(TIME_INDEX, i));
@@ -179,54 +193,20 @@ public class Windows {
         FileHandler.writeToCSV(Analysis.generateResults(baseline, DataFilter.filterByFixations(baseline)), outputDirectory, "baseline_DGMs");
     }
 
-    public static double getEventBaseline(String fileDirectory, String event) {
-        double eventValue = Double.NaN;
+    public static double getEventBaselineValue(String fileDirectory, String event) {
+        double eventValue = 0;
 
-        try {
-            File baselineDGMs = new File(fileDirectory + "/baseline/baseline.csv");
-            CSVReader reader = new CSVReader(new FileReader(baselineDGMs));
-
-            // Read the header line of the CSV file and cast into a List to find the index of the event
-            List<String> headers = Arrays.asList(reader.readNext());
-
-            int eventIndex = headers.indexOf(event);
-
-            while (reader.peek() != null) {
-                // Read the DGM values line of the CSV file and cast into a list to obtain the DGM baseline value
-                eventValue += Double.valueOf(Arrays.asList(reader.readNext()).get(eventIndex));
-            }
-
-            eventValue /= ((double) reader.getLinesRead() - 1);
-
-            reader.close();
-        } catch (Exception e) {
-            e.printStackTrace();
+        File baselineFile = new File(fileDirectory + "/baseline/baseline.csv");
+        DataEntry baseline = FileHandler.buildDataEntry(baselineFile);
+        baseline = fixationEvents.contains(event) ? DataFilter.filterByFixations(baseline) : baseline; // Determine if we need to filter by fiaxtions
+        baseline = DataFilter.filterByValidity(baseline); // Filter by validity
+        
+        for (int i = 0; i < baseline.rowCount(); i++) {
+            eventValue += Double.parseDouble(baseline.getValue(event, i));
         }
+
+        eventValue /= baseline.rowCount();
         
         return eventValue;
     }
-
-    // public static double[] getEventBaseline(String fileDirectory, String event) {
-    //     double[] eventValues = new double[] {Double.NaN, Double.NaN};
-
-    //     try {
-    //         File baselineDGMs = new File(fileDirectory + "/baseline/baseline_DGMs.csv");
-    //         CSVReader reader = new CSVReader(new FileReader(baselineDGMs));
-
-    //         // Read the header line of the CSV file and cast into a List to find the index of the event
-    //         List<String> headers = Arrays.asList(reader.readNext());
-
-    //         int eventIndex = headers.indexOf(event);
-    //         eventValues[0] = eventIndex;
-
-    //         // Read the DGM values line of the CSV file and cast into a list to obtain the DGM baseline value
-    //         eventValues[1] = Double.valueOf(Arrays.asList(reader.readNext()).get(eventIndex));
-
-    //         reader.close();
-    //     } catch (Exception e) {
-    //         e.printStackTrace();
-    //     }
-        
-    //     return eventValues;
-    // }
 }

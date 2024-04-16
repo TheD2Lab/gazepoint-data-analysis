@@ -3,18 +3,18 @@ package analysis;
 public class WindowSettings {
 
     public boolean tumblingEnabled;
-    public int tumblingWindowSize;
+    public double tumblingWindowSize;
 
     public boolean expandingEnabled;
-    public int expandingWindowSize;
+    public double expandingWindowSize;
 
     public boolean hoppingEnabled;
-    public int hoppingWindowSize;
-    public int hoppingHopSize;
+    public double hoppingWindowSize;
+    public double hoppingHopSize;
     
     public boolean eventEnabled;
     public String event;
-    public int eventTimeout;
+    public double eventTimeout;
 
     public WindowSettings() {
         this.tumblingEnabled = false;

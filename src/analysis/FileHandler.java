@@ -5,7 +5,6 @@ import java.io.FileWriter;
 import java.io.FileReader;
 import java.util.List;
 import java.util.HashMap; 
-//import javax.swing.text.html.HTMLDocument.Iterator;
 import java.util.Iterator;
 import java.util.ArrayList;
 import org.json.simple.*;

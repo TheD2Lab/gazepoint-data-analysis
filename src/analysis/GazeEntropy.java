@@ -16,7 +16,6 @@ public class GazeEntropy {
         ArrayList<String> aoiSequence = new ArrayList<String>();
         String lastAoi = "";
         
-        ArrayList<Double> allFixationDurations = new ArrayList<>();
         int fixationCount = data.rowCount();
         
         for (int row = 0; row < data.rowCount(); row++) {

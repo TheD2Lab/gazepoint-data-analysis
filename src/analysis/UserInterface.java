@@ -6,15 +6,15 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ItemEvent;
 import java.awt.image.BufferedImage;
-
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Hashtable;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.swing.filechooser.FileNameExtensionFilter;
 
@@ -299,12 +299,17 @@ public class UserInterface {
         componentGBC.gridwidth = 1;
         windowsPanel.add(eventLabel, componentGBC);
 
-        eventComboBox = new JComboBox<String>(new String[0]);
+        Set<String> itemSet = new HashSet<String>();
+        itemSet.addAll(Windows.fixationEvents);
+        itemSet.addAll(Windows.allGazeEvents);
+        eventComboBox = new JComboBox<String>(itemSet.toArray(new String[itemSet.size()]));
         componentGBC.insets = new Insets(0, 0, 0, 0);
         componentGBC.gridx = 1;
         componentGBC.gridy = 11;
         componentGBC.gridwidth = 3;
         windowsPanel.add(eventComboBox, componentGBC);
+
+        windowSettings.event = (String) eventComboBox.getSelectedItem();
 
         analysisPanel.add(windowsPanel, panelGBC);
     }
@@ -583,23 +588,23 @@ public class UserInterface {
         });
 
         tumblingWindowSizeField.addActionListener(e -> {
-            windowSettings.tumblingWindowSize = Integer.parseInt(tumblingWindowSizeField.getText());
+            windowSettings.tumblingWindowSize = Double.parseDouble(tumblingWindowSizeField.getText());
         });
 
         expandingWindowSizeField.addActionListener(e -> {
-            windowSettings.expandingWindowSize = Integer.parseInt(expandingWindowSizeField.getText());
+            windowSettings.expandingWindowSize = Double.parseDouble(expandingWindowSizeField.getText());
         });
 
         hoppingWindowSizeField.addActionListener(e -> {
-            windowSettings.hoppingWindowSize = Integer.parseInt(hoppingWindowSizeField.getText());
+            windowSettings.hoppingWindowSize = Double.parseDouble(hoppingWindowSizeField.getText());
         });
 
         hoppingHopSizeField.addActionListener(e -> {
-            windowSettings.hoppingHopSize = Integer.parseInt(hoppingHopSizeField.getText());
+            windowSettings.hoppingHopSize = Double.parseDouble(hoppingHopSizeField.getText());
         });
 
         eventTimeoutField.addActionListener(e -> {
-            windowSettings.eventTimeout = Integer.parseInt(eventTimeoutField.getText());
+            windowSettings.eventTimeout = Double.parseDouble(eventTimeoutField.getText());
         });
 
         eventComboBox.addItemListener(e -> {
@@ -623,12 +628,11 @@ public class UserInterface {
 
         fileCountLabel.setText(inputFiles.length + " files selected");
 
-        List<String> headers = getHeaders(inputFiles[0]);
-        eventComboBox.removeAllItems();
-        for (String s : headers) {
-            eventComboBox.addItem(s);
-        }
-
+        // List<String> headers = getHeaders(inputFiles[0]);
+        // eventComboBox.removeAllItems();
+        // for (String s : headers) {
+        //     eventComboBox.addItem(s);
+        // }
     }
 
     private void selectFileDirectory() {

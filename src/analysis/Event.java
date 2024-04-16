@@ -1,6 +1,5 @@
 package analysis;
 
-import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
 public class Event {

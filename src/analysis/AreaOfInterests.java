@@ -1,15 +1,10 @@
 package analysis;
 
 import java.util.Arrays;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Set;
-
-import java_cup.runtime.lr_parser;
-// import javafx.scene.chart.PieChart.Data;
 
 public class AreaOfInterests {
     final static String FIXATIONID_INDEX = "FPOGID";
